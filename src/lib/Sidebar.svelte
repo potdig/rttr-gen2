@@ -63,7 +63,6 @@
     place-items: center;
     width: $sidebarWidth;
     height: $viewHeight;
-    padding: 0.4em;
     box-sizing: border-box;
   }
 
