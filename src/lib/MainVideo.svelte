@@ -11,16 +11,21 @@
       <span>{mirrorId}</span>
     </p>
     <div id="progress-bar">
-      <div id="remaining-progress" style=""/>
+      <div
+        id="remaining-progress"
+        style="clip-path: polygon(0% 20%, 100% 20%, 100% 100%, 0% 100%)"
+      />
     </div>
   </div>
-  <div id="video" style="border-color: {color}"/>
+  <div id="video" style="border-color: {color}">
+    <img src="/rttr_logo.png" alt="rttr_logo">
+    </div>
 </div>
 
 <style lang="scss" scoped>
   @import 'stylesheet/common.scss';
   $progressWidth: 60px;
-  $transparentBlack: rgba($color: black, $alpha: 0.8);
+  $blackBackground: linear-gradient(#333, #222);
 
   #main-game {
     grid-row: 1;
@@ -48,18 +53,25 @@
       display: flex;
       flex-direction: column;
       justify-content: end;
-      background: $transparentBlack;
+      background: $blackBackground;
 
       #remaining-progress {
         background: linear-gradient(yellow, gold);
         height: 100%;
-        clip-path: polygon(0% 20%, 100% 20%, 100% 100%, 0% 100%);
       }
     }
   }
 
   #video {
-    background-color: $transparentBlack;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $blackBackground;
     border: $border;
+
+    img {
+      width: 40%;
+      filter: grayscale(100%) contrast(60%) brightness(15%) opacity(50%)
+    }
   }
 </style>
