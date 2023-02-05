@@ -92,7 +92,8 @@
 
   #info {
     border: $border;
-    width: calc(100% - $borderSize * 2);
+    border-right: 0px;
+    width: calc(100% - $borderSize);
   }
 
   #runner {
@@ -153,8 +154,9 @@
   }
 
   #commentators {
-    border: $borderSize solid whitesmoke;
-    width: calc(100% - $borderSize * 2);
+    border: $border whitesmoke;
+    border-right: 0px;
+    width: calc(100% - $borderSize);
     height: calc(100% - $borderSize * 2);
     background-color: rgba($color: black, $alpha: 0.2);
 
