@@ -158,6 +158,7 @@
     border-right: 0px;
     width: calc(100% - $borderSize);
     height: calc(100% - $borderSize * 2);
+    background-color: $backgroundForValue;
 
     .label {
       font-size: 1.4em;

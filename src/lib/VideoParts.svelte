@@ -9,7 +9,10 @@
 
 <div id="video-parts" style="grid-template-columns: {progressWidth}px 1fr">
   <div id="progress" style="grid-template-rows: {progressWidth}px 1fr">
-    <p id="mirror-id" style="background-color: {color}; height: {progressWidth}px; font-size: calc({progressWidth}px - 10px)">
+    <p
+      id="mirror-id"
+      style="background-color: {color}; height: {progressWidth}px; font-size: calc({progressWidth}px - 10px)"
+    >
       <span>{mirrorId}</span>
     </p>
     <div id="progress-bar" style="border-color: {color}">
@@ -26,6 +29,8 @@
 
 <style lang="scss" scoped>
   @import 'stylesheet/common.scss';
+  
+  $blackBackground: linear-gradient(#333, #222);
 
   #video-parts {
     display: grid;
@@ -65,6 +70,8 @@
     width: 100%;
     background: $blackBackground;
     border: $border;
+    box-sizing: border-box;
+    opacity: 0.95;
 
     img {
       width: 40%;
