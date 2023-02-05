@@ -5,8 +5,5 @@
 </script>
 
 <div class="sub-game">
-  <VideoParts {mirrorId}/>
+  <VideoParts {mirrorId} progressWidth={40}/>
 </div>
-
-<style lang="scss" scoped>
-</style>

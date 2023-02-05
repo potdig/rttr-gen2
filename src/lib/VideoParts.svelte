@@ -2,15 +2,17 @@
   import { colorFor } from './common-color'
 
   export let mirrorId
+  export let progressWidth
+
   $: color = colorFor(mirrorId)
 </script>
 
-<div id="video-parts">
-  <div id="progress">
-    <p id="mirror-id" style="background-color: {color}">
+<div id="video-parts" style="grid-template-columns: {progressWidth}px 1fr">
+  <div id="progress" style="grid-template-rows: {progressWidth}px 1fr">
+    <p id="mirror-id" style="background-color: {color}; height: {progressWidth}px; font-size: calc({progressWidth}px - 10px)">
       <span>{mirrorId}</span>
     </p>
-    <div id="progress-bar">
+    <div id="progress-bar" style="border-color: {color}">
       <div
         id="remaining-progress"
         style="clip-path: polygon(0% 20%, 100% 20%, 100% 100%, 0% 100%)"
@@ -27,22 +29,18 @@
 
   #video-parts {
     display: grid;
-    grid-template-columns: $progressWidth 1fr;
     width: 100%;
     height: 100%;
   }
 
   #progress {
     display: grid;
-    grid-template-rows: $progressWidth 1fr;
 
     #mirror-id {
-      height: $progressWidth;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: 'Fira Sans Condensed', sans-serif;
-      font-size: $progressWidth - 10px;
     }
 
     #progress-bar {
@@ -50,6 +48,7 @@
       flex-direction: column;
       justify-content: end;
       background: $blackBackground;
+      border-left: $border;
 
       #remaining-progress {
         background: linear-gradient(yellow, gold);
