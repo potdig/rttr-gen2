@@ -14,7 +14,7 @@
   <div id="info" style="border-color: {colorFor(mirrorId)}">
     <div id="runner">
       <div id="mirror-id">
-        <span>A</span>
+        <span>{mirrorId}</span>
       </div>
       <img id="icon" src="/vite.svg" alt="icon" />
       <p id="name">あらし</p>
