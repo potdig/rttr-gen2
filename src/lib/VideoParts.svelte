@@ -49,6 +49,7 @@
       justify-content: end;
       background: $blackBackground;
       border-left: $border;
+      border-bottom: $border;
 
       #remaining-progress {
         background: linear-gradient(yellow, gold);

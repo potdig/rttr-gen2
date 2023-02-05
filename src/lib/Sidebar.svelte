@@ -158,7 +158,6 @@
     border-right: 0px;
     width: calc(100% - $borderSize);
     height: calc(100% - $borderSize * 2);
-    background-color: rgba($color: black, $alpha: 0.2);
 
     .label {
       font-size: 1.4em;
