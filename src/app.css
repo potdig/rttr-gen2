@@ -46,7 +46,8 @@ h1 {
   height: 1080px;
   background-image: url('/background.png');
   margin: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr;
 }
 
 button {

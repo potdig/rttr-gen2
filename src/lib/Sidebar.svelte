@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { colorFor } from './common-color'
+
+  export let mirrorId: string
 </script>
 
 <div id="side">
@@ -8,9 +11,9 @@
       Powered by <img id="rb-logo" src="/rb_logo.png" alt="Logo of RttR" />
     </p>
   </div>
-  <div id="info">
+  <div id="info" style="border-color: {colorFor(mirrorId)}">
     <div id="runner">
-      <div id="mirrorId">
+      <div id="mirror-id">
         <span>A</span>
       </div>
       <img id="icon" src="/vite.svg" alt="icon" />
@@ -41,8 +44,8 @@
 </div>
 
 <style lang="scss" scoped>
-  $viewWidth: 1920px;
-  $viewHeight: 1080px;
+  @import 'stylesheet/common.scss';
+
   $sidebarWidth: $viewWidth * 0.3;
   $backgroundForLabel: rgba(
     $color: white,
@@ -53,8 +56,6 @@
     $alpha: 0.3,
   );
   $runnerHeight: 50px;
-
-  $borderSize: 4px;
 
   #side {
     display: grid;
@@ -78,7 +79,7 @@
 
     #rb {
       font-size: 2.4em;
-      font-family: "Fira Sans Condensed", sans-serif;
+      font-family: 'Fira Sans Condensed', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -91,7 +92,7 @@
   }
 
   #info {
-    border: $borderSize solid red;
+    border: $border;
     width: calc(100% - $borderSize * 2);
   }
 
@@ -107,11 +108,11 @@
       height: $runnerHeight;
     }
 
-    #mirrorId {
+    #mirror-id {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: "Fira Sans Condensed", sans-serif;
+      font-family: 'Fira Sans Condensed', sans-serif;
       font-size: 1.4em;
       line-height: $runnerHeight;
       background-color: $backgroundForLabel;
@@ -122,7 +123,7 @@
     }
 
     #timer {
-      font-family: "Fira Code", monospace;
+      font-family: 'Fira Code', monospace;
       margin-left: auto;
       font-size: $runnerHeight - 12px;
     }

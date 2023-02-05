@@ -1,8 +1,10 @@
 <script lang="ts">
-  import Sidebar from './lib/Sidebar.svelte'
+  import GameArea from './lib/GameArea.svelte'
+import Sidebar from './lib/Sidebar.svelte'
 </script>
 
-<Sidebar />
+<Sidebar mirrorId="A" />
+<GameArea mirrorId="A" />
 
 <style>
 </style>
