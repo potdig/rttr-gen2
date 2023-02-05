@@ -18,8 +18,8 @@
     </div>
   </div>
   <div id="video" style="border-color: {color}">
-    <img src="/rttr_logo.png" alt="rttr_logo">
-    </div>
+    <img src="/rttr_logo.png" alt="rttr_logo" />
+  </div>
 </div>
 
 <style lang="scss" scoped>
@@ -71,7 +71,7 @@
 
     img {
       width: 40%;
-      filter: grayscale(100%) contrast(60%) brightness(15%) opacity(50%)
+      filter: grayscale(100%) contrast(60%) brightness(15%) opacity(50%);
     }
   }
 </style>
