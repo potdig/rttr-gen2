@@ -103,7 +103,7 @@
     align-items: center;
     font-size: $runnerHeight - 20px;
 
-    * {
+    & > * {
       background-color: $backgroundForValue;
       height: $runnerHeight;
     }
