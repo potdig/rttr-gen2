@@ -5,6 +5,3 @@ import Sidebar from './lib/Sidebar.svelte'
 
 <Sidebar mirrorId="A" />
 <GameArea mirrorId="A" />
-
-<style>
-</style>
