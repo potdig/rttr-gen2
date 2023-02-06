@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 
@@ -5,6 +6,16 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 export default defineConfig({
   plugins: [svelte()],
   server: {
-    host: true
-  }
+    host: true,
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        a: resolve(__dirname, 'graphics/a/index.html'),
+        b: resolve(__dirname, 'graphics/b/index.html'),
+        c: resolve(__dirname, 'graphics/c/index.html'),
+        d: resolve(__dirname, 'graphics/d/index.html'),
+      },
+    },
+  },
 })
