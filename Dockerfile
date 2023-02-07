@@ -12,6 +12,6 @@ FROM node:lts-alpine
 WORKDIR /work
 
 COPY --from=node_modules /work/node_modules ./node_modules
-COPY package*.json svelte.config.js index.html ./
+COPY package*.json svelte.config.js ./
 
 CMD [ "npm", "run", "dev" ]
