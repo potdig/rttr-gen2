@@ -1,7 +1,7 @@
-import '../../src/app.css'
-import App from '../../src/App.svelte'
+import '../../src/graphics.css'
+import Graphics from '../../src/Graphics.svelte'
 
-const app = new App({
+const app = new Graphics({
   target: document.getElementById('app'),
   props: {
     mirrorId: 'A',
