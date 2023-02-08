@@ -9,12 +9,16 @@ export default defineConfig({
     host: true,
   },
   build: {
+    assetsDir: 'web-assets',
     rollupOptions: {
       input: {
-        a: resolve(__dirname, 'graphics/a/index.html'),
-        b: resolve(__dirname, 'graphics/b/index.html'),
-        c: resolve(__dirname, 'graphics/c/index.html'),
-        d: resolve(__dirname, 'graphics/d/index.html'),
+        'graphics/a': resolve(__dirname, 'graphics/a/index.html'),
+        'graphics/b': resolve(__dirname, 'graphics/b/index.html'),
+        'graphics/c': resolve(__dirname, 'graphics/c/index.html'),
+        'graphics/d': resolve(__dirname, 'graphics/d/index.html'),
+      },
+      output: {
+        assetFileNames: "web-assets/[name]-[hash][extname]"
       },
     },
   },

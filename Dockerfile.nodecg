@@ -1,0 +1,24 @@
+# Install NodeCG
+FROM node:lts-alpine AS nodecg
+WORKDIR /app
+RUN apk --no-cache add git &&\
+    git clone https://github.com/nodecg/nodecg.git &&\
+    cd nodecg &&\
+    npm install --production
+
+# Install node_modules
+FROM node:lts-alpine AS node_modules
+WORKDIR /app
+COPY package*.json ./
+RUN apk add --no-cache python3 alpine-sdk &&\
+    npm install
+
+# Set up 
+FROM node:lts-alpine
+ARG LAYOUTS_NAME
+WORKDIR /app
+COPY --from=nodecg /app/nodecg ./nodecg
+COPY --from=node_modules /app/node_modules ./nodecg/bundles/${LAYOUTS_NAME}/node_modules
+COPY package*.json dist/* ./nodecg/bundles/${LAYOUTS_NAME}/
+WORKDIR /app/nodecg
+CMD ["node", "index.js"]

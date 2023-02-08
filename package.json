@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=/bundles/rttr-gen2/",
     "build:custom": "vite build --outDir $OUT_DIR",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
@@ -23,5 +23,21 @@
   },
   "dependencies": {
     "color": "^4.2.3"
+  },
+  "nodecg": {
+    "compatibleRange": "^1.0.0",
+    "graphics": [
+      {
+        "file": "a/index.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "mount": [
+      {
+        "directory": "web-assets",
+        "endpoint": "web-assets"
+      }
+    ]
   }
 }
