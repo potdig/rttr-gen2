@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/bundles/rttr-gen2/",
+    "build:extension": "tsc -p tsconfig.extension.json",
     "build:custom": "vite build --outDir $OUT_DIR",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
     "@sveltejs/vite-plugin-svelte": "^2.0.0",
     "@tsconfig/svelte": "^3.0.0",
     "@types/color": "^3.0.3",

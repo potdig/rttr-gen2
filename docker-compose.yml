@@ -17,8 +17,5 @@ services:
     image: potdig/rttr-gen2-nodecg
     build:
       dockerfile: Dockerfile.nodecg
-    volumes:
-      - ./dist/graphics:/app/nodecg/bundles/${LAYOUTS_NAME}/graphics
-      - ./dist/web-assets:/app/nodecg/bundles/${LAYOUTS_NAME}/web-assets
     ports:
       - 9090:9090
