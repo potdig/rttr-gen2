@@ -1,0 +1,23 @@
+{
+  "name": "rttr-gen2",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "nodecg": {
+    "compatibleRange": "^1.0.0",
+    "graphics": [
+      {
+        "file": "a/index.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "mount": [
+      {
+        "directory": "web-assets",
+        "endpoint": "web-assets"
+      }
+    ]
+  }
+}

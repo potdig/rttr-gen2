@@ -19,6 +19,7 @@ ARG LAYOUTS_NAME
 WORKDIR /app
 COPY --from=nodecg /app/nodecg ./nodecg
 COPY --from=node_modules /app/node_modules ./nodecg/bundles/${LAYOUTS_NAME}/node_modules
-COPY package*.json dist/* ./nodecg/bundles/${LAYOUTS_NAME}/
+COPY package.json.nodecg ./nodecg/bundles/${LAYOUTS_NAME}/package.json
+COPY dist/* ./nodecg/bundles/${LAYOUTS_NAME}/
 WORKDIR /app/nodecg
 CMD ["node", "index.js"]
