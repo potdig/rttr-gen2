@@ -7,7 +7,9 @@ const configs = {
     format: 'cjs',
     sourcemap: true,
   },
-  plugins: [typescript()],
+  plugins: [typescript({
+    tsconfig: 'src/extension/tsconfig.json'
+  })],
 }
 
 export default configs

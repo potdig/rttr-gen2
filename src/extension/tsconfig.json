@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "preserveValueImports": false,
+    "target": "ES5",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "types": ["node"],
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "outDir": "../../dist/extension"
+  },
+  "include": ["../types/*.d.ts", "*.ts"]
+}

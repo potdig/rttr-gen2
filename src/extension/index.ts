@@ -1,3 +1,6 @@
-const e = 'a'
+import message from './message'
+import type { NodeCG } from './nodecg'
 
-export default e
+export default (nodecg: NodeCG) => {
+  message(nodecg)
+}
