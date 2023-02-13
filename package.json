@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/bundles/rttr-gen2/",
-    "build:extension": "tsc -p tsconfig.extension.json",
-    "build:custom": "vite build --outDir $OUT_DIR",
+    "build:extension": "rollup -c rollup.config.extension.js",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
