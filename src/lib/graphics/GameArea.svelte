@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
+  import type { Group } from '../../types/group'
   import MainVideo from './MainVideo.svelte'
   import SubVideo from './SubVideo.svelte'
 
-  const mirrorIds = ['A', 'B', 'C', 'D']
+  const mirrorIds: Array<Group> = ['A', 'B', 'C', 'D']
 
-  export let mirrorId
+  export let mirrorId: Group
   $: subMirrorIds = mirrorIds.filter(id => id !== mirrorId)
 </script>
 

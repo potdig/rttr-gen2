@@ -1,7 +1,8 @@
 <script lang="ts">
+  import type { Group } from '../../types/group'
   import VideoParts from './VideoParts.svelte'
 
-  export let mirrorId
+  export let mirrorId: Group
 </script>
 
 <div id="main-game">

@@ -1,7 +1,8 @@
 <script lang="ts">
+  import type { Group } from '../../types/group'
   import { colorFor } from './common-color'
 
-  export let mirrorId: string
+  export let mirrorId: Group
 </script>
 
 <div id="side">
