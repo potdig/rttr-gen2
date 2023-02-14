@@ -1,4 +1,4 @@
-import type { Runner } from '../types/runner'
+import type { Runner } from '~/types/runner'
 
 const runners: Array<Runner> = [
   {

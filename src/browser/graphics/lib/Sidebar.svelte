@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Group } from '../../../types/group'
-  import type { Runner } from '../../../types/runner'
+  import type { Group } from '~/types/group'
+  import type { Runner } from '~/types/runner'
   import { colorFor } from './common-color'
 
   let runner: Runner

@@ -18,8 +18,13 @@ export default defineConfig({
         'graphics/d': resolve(__dirname, 'graphics/d/index.html'),
       },
       output: {
-        assetFileNames: "web-assets/[name]-[hash][extname]"
+        assetFileNames: 'web-assets/[name]-[hash][extname]',
       },
+    },
+  },
+  resolve: {
+    alias: {
+      '~/': resolve(__dirname, 'src/'),
     },
   },
 })

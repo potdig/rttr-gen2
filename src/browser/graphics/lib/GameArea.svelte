@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Group } from '../../../types/group'
+  import type { Group } from '~/types/group'
   import MainVideo from './MainVideo.svelte'
   import SubVideo from './SubVideo.svelte'
 

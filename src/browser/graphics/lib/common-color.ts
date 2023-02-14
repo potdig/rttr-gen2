@@ -1,5 +1,5 @@
 import Color from 'color'
-import type { Group } from '../../../types/group'
+import type { Group } from '~/types/group'
 
 const color = new Map<Group, Color>([
   ['A', Color.rgb(250, 128, 114)],
