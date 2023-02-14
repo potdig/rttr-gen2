@@ -11,7 +11,22 @@
         "file": "a/index.html",
         "width": 1920,
         "height": 1080
-      }
+      },
+      {
+        "file": "b/index.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "c/index.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "d/index.html",
+        "width": 1920,
+        "height": 1080
+      },
     ],
     "mount": [
       {
