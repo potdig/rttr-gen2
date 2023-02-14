@@ -5,6 +5,7 @@
 
   let runner: Runner
   export let mirrorId: Group
+  $: iconPath = `/assets/rttr-gen2/runner-icons/${runner?.icon}`
 
   window.nodecg.Replicant('runners').on('change', (newValue, _) => {
     runner = newValue.find(runner => runner.group === mirrorId)
@@ -13,9 +14,17 @@
 
 <div id="side">
   <div id="logo">
-    <img id="rttr-logo" src="/rttr_logo.png" alt="Logo of RttR" />
+    <img
+      id="rttr-logo"
+      src="/assets/rttr-gen2/materials/rttr_logo.png"
+      alt="Logo of RttR"
+    />
     <p id="rb">
-      Powered by <img id="rb-logo" src="/rb_logo.png" alt="Logo of RttR" />
+      Powered by <img
+        id="rb-logo"
+        src="/assets/rttr-gen2/materials/rb_logo.png"
+        alt="Logo of RttR"
+      />
     </p>
   </div>
   <div id="info" style="border-color: {colorFor(mirrorId)}">
@@ -23,7 +32,7 @@
       <div id="mirror-id">
         <span>{mirrorId}</span>
       </div>
-      <img id="icon" src="/vite.svg" alt="icon" />
+      <img id="icon" src={iconPath} alt="icon" />
       <p id="name">{runner?.name}</p>
       <p id="timer">0:12:34</p>
     </div>

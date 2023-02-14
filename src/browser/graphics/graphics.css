@@ -44,7 +44,7 @@ h1 {
 #app {
   width: 1920px;
   height: 1080px;
-  background-image: url('/background.png');
+  background-image: url('/assets/rttr-gen2/materials/background.png');
   margin: 0;
   display: grid;
   grid-template-columns: max-content 1fr;

@@ -23,13 +23,13 @@
     </div>
   </div>
   <div id="video" style="border-color: {color}">
-    <img src="/rttr_logo.png" alt="rttr_logo" />
+    <img src="/assets/rttr-gen2/materials/rttr_logo.png" alt="rttr_logo" />
   </div>
 </div>
 
 <style lang="scss" scoped>
   @import 'stylesheet/common.scss';
-  
+
   $blackBackground: linear-gradient(#333, #222);
 
   #video-parts {

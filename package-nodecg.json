@@ -28,6 +28,23 @@
         "height": 1080
       }
     ],
+    "assetCategories": [
+      {
+        "name": "runner-icons",
+        "title": "走者アイコン",
+        "allowedTypes": ["jpg", "jpeg", "gif", "png"]
+      },
+      {
+        "name": "commentator-icons",
+        "title": "MC・解説アイコン",
+        "allowedTypes": ["jpg", "jpeg", "gif", "png"]
+      },
+      {
+        "name": "materials",
+        "title": "素材",
+        "allowedTypes": ["jpg", "jpeg", "gif", "png"]
+      }
+    ],
     "mount": [
       {
         "directory": "web-assets",
