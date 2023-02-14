@@ -1,8 +1,14 @@
 <script lang="ts">
   import type { Group } from '../../../types/group'
+  import type { Runner } from '../../../types/runner'
   import { colorFor } from './common-color'
 
+  let runner: Runner
   export let mirrorId: Group
+
+  window.nodecg.Replicant('runners').on('change', (newValue, _) => {
+    runner = newValue.find(runner => (runner.group = mirrorId))
+  })
 </script>
 
 <div id="side">
@@ -18,24 +24,24 @@
         <span>{mirrorId}</span>
       </div>
       <img id="icon" src="/vite.svg" alt="icon" />
-      <p id="name">あらし</p>
+      <p id="name">{runner?.name}</p>
       <p id="timer">0:12:34</p>
     </div>
     <div id="description">
       <p class="label">ゲーム名</p>
-      <p class="value">Racing Pitch</p>
+      <p class="value">{runner?.gameTitle}</p>
       <p class="label">カテゴリ</p>
-      <p class="value">Any%</p>
+      <p class="value">{runner?.category}</p>
       <p class="label">使用ハード</p>
-      <p class="value">PC</p>
+      <p class="value">{runner?.console}</p>
       <p class="label">PBタイム</p>
-      <p class="value">0:10:06.800</p>
+      <p class="value">{runner?.personalBest}</p>
       <p class="label">目標タイム</p>
-      <p class="value">0:09:XX</p>
+      <p class="value">{runner?.targetTime}</p>
       <p class="label">Twitter</p>
-      <p class="value">@Imhakoniwa27M11</p>
+      <p class="value">{runner?.twitter}</p>
       <p class="label">配信先</p>
-      <p class="value">https://www.twitch.tv/sheephitsuji</p>
+      <p class="value">{runner?.streamLink}</p>
     </div>
   </div>
   <div id="camera" />
