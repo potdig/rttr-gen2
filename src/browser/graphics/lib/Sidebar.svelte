@@ -7,7 +7,7 @@
   export let mirrorId: Group
 
   window.nodecg.Replicant('runners').on('change', (newValue, _) => {
-    runner = newValue.find(runner => (runner.group = mirrorId))
+    runner = newValue.find(runner => runner.group === mirrorId)
   })
 </script>
 
