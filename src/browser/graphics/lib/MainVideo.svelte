@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { Group } from '../../types/group'
+  import type { Group } from '../../../types/group'
   import VideoParts from './VideoParts.svelte'
 
   export let mirrorId: Group
 </script>
 
 <div id="main-game">
-  <VideoParts {mirrorId} progressWidth={60}/>
+  <VideoParts {mirrorId} progressWidth={60} />
 </div>
 
 <style lang="scss" scoped>

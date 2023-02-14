@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Group } from '../../types/group'
+  import type { Group } from '../../../types/group'
   import { colorFor } from './common-color'
 
   export let mirrorId: Group
