@@ -3,7 +3,7 @@ import type { Group } from './group'
 import type { Runner } from './runner'
 
 export type ReplicantMap = {
-  runners: Map<Group, Runner>
+  runners: Array<Runner>
   commentators: Array<Commentator>
   setupText: string
 }

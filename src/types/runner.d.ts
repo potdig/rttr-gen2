@@ -1,4 +1,8 @@
+import type { Group } from './group'
+
 export type Runner = {
+  group: Group
+  order: number
   name: string
   gameTitle: string
   category: string
