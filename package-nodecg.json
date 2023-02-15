@@ -28,6 +28,32 @@
         "height": 1080
       }
     ],
+    "dashboardPanels": [
+      {
+        "width": "3",
+        "name": "GroupA",
+        "title": "A班",
+        "file": "group-control/a/index.html"
+      },
+      {
+        "width": "3",
+        "name": "GroupB",
+        "title": "B班",
+        "file": "group-control/b/index.html"
+      },
+      {
+        "width": "3",
+        "name": "GroupC",
+        "title": "C班",
+        "file": "group-control/c/index.html"
+      },
+      {
+        "width": "3",
+        "name": "GroupD",
+        "title": "D班",
+        "file": "group-control/d/index.html"
+      }
+    ],
     "assetCategories": [
       {
         "name": "runner-icons",

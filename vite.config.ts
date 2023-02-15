@@ -16,6 +16,22 @@ export default defineConfig({
         'graphics/b': resolve(__dirname, 'graphics/b/index.html'),
         'graphics/c': resolve(__dirname, 'graphics/c/index.html'),
         'graphics/d': resolve(__dirname, 'graphics/d/index.html'),
+        'dashboard/group-control/a': resolve(
+          __dirname,
+          'dashboard/group-control/a/index.html'
+        ),
+        'dashboard/group-control/b': resolve(
+          __dirname,
+          'dashboard/group-control/b/index.html'
+        ),
+        'dashboard/group-control/c': resolve(
+          __dirname,
+          'dashboard/group-control/c/index.html'
+        ),
+        'dashboard/group-control/d': resolve(
+          __dirname,
+          'dashboard/group-control/d/index.html'
+        ),
       },
       output: {
         assetFileNames: 'web-assets/[name]-[hash][extname]',
