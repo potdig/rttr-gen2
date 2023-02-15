@@ -1,3 +1,4 @@
+import type { Commentator } from '~/types/commentator'
 import type { Group } from '~/types/group'
 import type { Runner } from '~/types/runner'
 
@@ -116,6 +117,13 @@ const runners: Array<Runner> = [
   },
 ]
 
+const commentators: Array<Commentator> = [
+  {
+    name: 'Comment A',
+    icon: 'comm_a.png',
+    linkId: ['A', 2],
+  },
+]
 const currentRunners: Array<[Group, number]> = [
   ['A', 1],
   ['B', 1],
@@ -123,4 +131,4 @@ const currentRunners: Array<[Group, number]> = [
   ['D', 1],
 ]
 
-export { runners, currentRunners }
+export { runners, commentators, currentRunners }

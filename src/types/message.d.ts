@@ -9,6 +9,9 @@ export type MessageMap = {
   updateRunner: {
     result: boolean
   }
+  updateCommentator: {
+    result: boolean
+  }
   updateCurrentRunner: {
     data: UpdateCurrentRunnerArgs
     result: boolean
