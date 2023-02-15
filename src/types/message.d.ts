@@ -1,14 +1,16 @@
 import type { Group } from './group'
 
-type UpdateRunnerArgs = {
+type UpdateCurrentRunnerArgs = {
   group: Group
   order: number
 }
 
 export type MessageMap = {
   updateRunner: {
-    data: UpdateRunnerArgs
+    result: boolean
+  }
+  updateCurrentRunner: {
+    data: UpdateCurrentRunnerArgs
     result: boolean
   }
 }
-
