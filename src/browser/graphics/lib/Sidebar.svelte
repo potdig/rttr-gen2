@@ -1,15 +1,11 @@
 <script lang="ts">
   import type { Group } from '~/types/group'
-  import type { Runner } from '~/types/runner'
   import { colorFor } from './common-color'
+  import { currentRunners } from '~/browser/store/runner'
 
-  let runner: Runner
   export let mirrorId: Group
+  $: runner = $currentRunners.get(mirrorId)
   $: iconPath = `/assets/rttr-gen2/runner-icons/${runner?.icon}`
-
-  window.nodecg.Replicant('runners').on('change', (newValue, _) => {
-    runner = newValue.find(runner => runner.group === mirrorId)
-  })
 </script>
 
 <div id="side">
