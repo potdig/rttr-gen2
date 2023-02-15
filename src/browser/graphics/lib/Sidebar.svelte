@@ -1,11 +1,11 @@
 <script lang="ts">
   import type { Group } from '~/types/group'
   import { colorFor } from './common-color'
-  import { currentRunners } from '~/browser/store/runner'
+  import { currentRunner } from '~/browser/store/runner'
 
   export let mirrorId: Group
-  $: runner = $currentRunners.get(mirrorId)
-  $: iconPath = `/assets/rttr-gen2/runner-icons/${runner?.icon}`
+  $: runner = currentRunner(mirrorId)
+  $: iconPath = `/assets/rttr-gen2/runner-icons/${$runner?.icon}`
 </script>
 
 <div id="side">
@@ -29,24 +29,24 @@
         <span>{mirrorId}</span>
       </div>
       <img id="icon" src={iconPath} alt="icon" />
-      <p id="name">{runner?.name}</p>
+      <p id="name">{$runner?.name}</p>
       <p id="timer">0:12:34</p>
     </div>
     <div id="description">
       <p class="label">ゲーム名</p>
-      <p class="value">{runner?.gameTitle}</p>
+      <p class="value">{$runner?.gameTitle}</p>
       <p class="label">カテゴリ</p>
-      <p class="value">{runner?.category}</p>
+      <p class="value">{$runner?.category}</p>
       <p class="label">使用ハード</p>
-      <p class="value">{runner?.console}</p>
+      <p class="value">{$runner?.console}</p>
       <p class="label">PBタイム</p>
-      <p class="value">{runner?.personalBest}</p>
+      <p class="value">{$runner?.personalBest}</p>
       <p class="label">目標タイム</p>
-      <p class="value">{runner?.targetTime}</p>
+      <p class="value">{$runner?.targetTime}</p>
       <p class="label">Twitter</p>
-      <p class="value">{runner?.twitter}</p>
+      <p class="value">{$runner?.twitter}</p>
       <p class="label">配信先</p>
-      <p class="value">{runner?.streamLink}</p>
+      <p class="value">{$runner?.streamLink}</p>
     </div>
   </div>
   <div id="camera" />
