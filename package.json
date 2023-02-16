@@ -15,6 +15,7 @@
     "@sveltejs/vite-plugin-svelte": "^2.0.0",
     "@tsconfig/svelte": "^3.0.0",
     "@types/color": "^3.0.3",
+    "@types/luxon": "^3.2.0",
     "sass": "^1.57.1",
     "svelte": "^3.54.0",
     "svelte-check": "^2.10.0",
@@ -24,7 +25,8 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
-    "color": "^4.2.3"
+    "color": "^4.2.3",
+    "luxon": "^3.2.1"
   },
   "nodecg": {
     "compatibleRange": "^1.0.0",
