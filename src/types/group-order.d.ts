@@ -1,1 +1,1 @@
-export type GroupOrder = [Group, number]
+export type GroupOrder = [Group, number] | 'MC'

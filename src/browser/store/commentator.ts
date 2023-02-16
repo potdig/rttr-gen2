@@ -11,19 +11,20 @@ const commentators: Readable<Array<Commentator>> = readable([], set => {
 })
 
 const currentCommentators: Readable<Array<Commentator>> = derived(
-  // TODO: MC に対応する
   [commentators, ...groups.map(group => currentRunner(group))],
   ([commentators, ...currentRunners]) => {
     const currentGroupOrders: Array<GroupOrder> = currentRunners.map(runner => [
       runner?.group,
       runner?.order,
     ])
-    return commentators.filter(commentator =>
-      currentGroupOrders.some(
-        groupOrder =>
-          groupOrder[0] === commentator.linkId[0] &&
-          groupOrder[1] === commentator.linkId[1]
-      )
+    return commentators.filter(
+      commentator =>
+        commentator.linkId === 'MC' ||
+        currentGroupOrders.some(
+          groupOrder =>
+            groupOrder[0] === commentator.linkId[0] &&
+            groupOrder[1] === commentator.linkId[1]
+        )
     )
   }
 )

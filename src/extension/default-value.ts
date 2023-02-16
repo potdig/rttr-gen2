@@ -123,6 +123,21 @@ const commentators: Array<Commentator> = [
     icon: 'comm_a.png',
     linkId: ['A', 2],
   },
+  {
+    name: 'Comment B',
+    icon: 'comm_a.png',
+    linkId: ['B', 1],
+  },
+  {
+    name: 'MC 1',
+    icon: 'mc_1.png',
+    linkId: 'MC',
+  },
+  {
+    name: 'MC 2',
+    icon: 'mc_2.png',
+    linkId: 'MC',
+  },
 ]
 const currentRunners: Array<[Group, number]> = [
   ['A', 1],
