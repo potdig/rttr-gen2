@@ -10,16 +10,26 @@ const commentators: Readable<Array<Commentator>> = readable([], set => {
   })
 })
 
+const mcs = derived(commentators, $commentators =>
+  $commentators.filter(commentator => commentator.linkId === 'MC')
+)
+
+const currentMC: Readable<Array<string>> = readable([], set => {
+  window.nodecg.Replicant('currentMC').on('change', newValue => {
+    set(newValue)
+  })
+})
+
 const currentCommentators: Readable<Array<Commentator>> = derived(
-  [commentators, ...groups.map(group => currentRunner(group))],
-  ([commentators, ...currentRunners]) => {
+  [commentators, currentMC, ...groups.map(group => currentRunner(group))],
+  ([commentators, currentMC, ...currentRunners]) => {
     const currentGroupOrders: Array<GroupOrder> = currentRunners.map(runner => [
       runner?.group,
       runner?.order,
     ])
     return commentators.filter(
       commentator =>
-        commentator.linkId === 'MC' ||
+        currentMC.includes(commentator.name) ||
         currentGroupOrders.some(
           groupOrder =>
             groupOrder[0] === commentator.linkId[0] &&
@@ -29,4 +39,8 @@ const currentCommentators: Readable<Array<Commentator>> = derived(
   }
 )
 
-export { currentCommentators }
+function updateCurrentMC(mcs: Array<string>) {
+  window.nodecg.sendMessage('updateCurrentMC', mcs)
+}
+
+export { currentCommentators, mcs, updateCurrentMC }

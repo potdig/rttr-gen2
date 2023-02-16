@@ -16,4 +16,8 @@ export type MessageMap = {
     data: UpdateCurrentRunnerArgs
     result: boolean
   }
+  updateCurrentMC: {
+    data: Array<string>
+    result: boolean
+  }
 }

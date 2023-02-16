@@ -49,8 +49,26 @@ function setupCurrentRunners(nodecg: NodeCG) {
   })
 }
 
+function setupCurrentMC(nodecg: NodeCG) {
+  const currentRunnersRep = nodecg.Replicant('currentMC', {
+    defaultValue: [],
+  })
+
+  nodecg.listenFor('updateCurrentMC', (newValue, cb) => {
+    if (!cb || cb.handled) {
+      return
+    }
+
+    console.log(`update current MC: ${newValue}`)
+    currentRunnersRep.value = newValue
+
+    cb && cb(null, true)
+  })
+}
+
 export default (nodecg: NodeCG) => {
   setupRunners(nodecg)
   setupCommentators(nodecg)
   setupCurrentRunners(nodecg)
+  setupCurrentMC(nodecg)
 }

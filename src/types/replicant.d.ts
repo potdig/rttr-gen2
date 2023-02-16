@@ -6,5 +6,6 @@ export type ReplicantMap = {
   runners: Array<Runner>
   commentators: Array<Commentator>
   currentRunners: Array<[Group, number]>
+  currentMC: Array<string>
   setupText: string
 }
