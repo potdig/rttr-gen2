@@ -52,6 +52,12 @@
         "name": "GroupD",
         "title": "D班",
         "file": "group-control/d/index.html"
+      },
+      {
+        "width": "3",
+        "name": "commentators",
+        "title": "MC・解説",
+        "file": "commentator/index.html"
       }
     ],
     "assetCategories": [

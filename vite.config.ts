@@ -32,6 +32,10 @@ export default defineConfig({
           __dirname,
           'dashboard/group-control/d/index.html'
         ),
+        'dashboard/commentator': resolve(
+          __dirname,
+          'dashboard/commentator/index.html'
+        ),
       },
       output: {
         assetFileNames: 'web-assets/[name]-[hash][extname]',
