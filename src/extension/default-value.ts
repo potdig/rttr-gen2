@@ -138,6 +138,11 @@ const commentators: Array<Commentator> = [
     icon: 'mc_2.png',
     linkId: 'MC',
   },
+  {
+    name: 'えむしー3',
+    icon: 'mc_3.png',
+    linkId: 'MC',
+  },
 ]
 const currentRunners: Array<[Group, number]> = [
   ['A', 1],
