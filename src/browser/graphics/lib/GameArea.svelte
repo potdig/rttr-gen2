@@ -1,12 +1,11 @@
 <script lang="ts">
   import type { Group } from '~/types/group'
+  import { groups } from '~/util/groups'
   import MainVideo from './MainVideo.svelte'
   import SubVideo from './SubVideo.svelte'
 
-  const mirrorIds: Array<Group> = ['A', 'B', 'C', 'D']
-
   export let mirrorId: Group
-  $: subMirrorIds = mirrorIds.filter(id => id !== mirrorId)
+  $: subMirrorIds = groups.filter(id => id !== mirrorId)
 </script>
 
 <div id="game-area">

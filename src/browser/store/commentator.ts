@@ -1,10 +1,8 @@
 import { derived, readable, type Readable } from 'svelte/store'
 import type { Commentator } from '~/types/commentator'
-import type { Group } from '~/types/group'
 import type { GroupOrder } from '~/types/group-order'
+import { groups } from '~/util/groups'
 import { currentRunner } from './runner'
-
-const groups: Array<Group> = ['A', 'B', 'C', 'D']
 
 const commentators: Readable<Array<Commentator>> = readable([], set => {
   window.nodecg.Replicant('commentators').on('change', (newValue, _) => {
