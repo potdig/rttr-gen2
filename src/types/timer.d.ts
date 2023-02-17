@@ -3,9 +3,11 @@ import type { Group } from './group'
 
 type TimerState = 'Stop' | 'Start' | 'Pause' | 'Success'
 
-export interface Timer {
+interface Timer {
   group: Group
   limitSeconds: number
   remainingSeconds: number
   state: TimerState
 }
+
+export { Timer, TimerState }
