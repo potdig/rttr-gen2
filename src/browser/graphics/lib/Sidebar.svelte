@@ -2,9 +2,12 @@
   import type { Group } from '~/types/group'
   import { colorFor } from './common-color'
   import { currentRunner } from '~/browser/store/runner'
+  import { timerFor } from '~/browser/store/timer'
 
   export let mirrorId: Group
   $: runner = currentRunner(mirrorId)
+  $: timer = timerFor(mirrorId)
+  console.log($timer)
   $: iconPath = `/assets/rttr-gen2/runner-icons/${$runner?.icon}`
 </script>
 
@@ -30,7 +33,7 @@
       </div>
       <img id="icon" src={iconPath} alt="icon" />
       <p id="name">{$runner?.name}</p>
-      <p id="timer">0:12:34</p>
+      <p id="timer">{$timer?.format()}</p>
     </div>
     <div id="description">
       <p class="label">ゲーム名</p>

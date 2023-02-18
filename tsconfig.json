@@ -26,5 +26,6 @@
     "graphics/**/*.ts",
     "dashboard/**/*.ts"
   ],
+  "exclude": ["src/extension/**/*.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

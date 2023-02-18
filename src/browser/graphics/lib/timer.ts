@@ -1,0 +1,28 @@
+import { Duration } from 'luxon'
+import type { Group } from '~/types/group'
+import type { Timer, TimerState } from '~/types/timer'
+
+export class TimerImpl implements Timer {
+  group: Group
+  limitSeconds: number
+  remainingSeconds: number
+  state: TimerState
+
+  constructor(
+    group: Group,
+    limitSeconds: number,
+    remainingSeconds: number,
+    state: TimerState
+  ) {
+    this.group = group
+    this.limitSeconds = limitSeconds
+    this.remainingSeconds = remainingSeconds
+    this.state = state
+  }
+
+  public format() {
+    return Duration.fromObject({ seconds: this.limitSeconds }).toFormat(
+      'h:mm:ss'
+    )
+  }
+}
