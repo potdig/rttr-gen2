@@ -1,8 +1,8 @@
 import { Duration } from 'luxon'
 import type { Group } from '~/types/group'
-import type { Timer, TimerState } from '~/types/timer'
+import type { TimerState } from '~/types/timer'
 
-export class TimerImpl implements Timer {
+export class TimerImpl {
   group: Group
   limitSeconds: number
   remainingSeconds: number

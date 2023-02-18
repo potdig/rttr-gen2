@@ -1,20 +1,26 @@
-import { DateTime, Duration } from 'luxon'
+import { Duration } from 'luxon'
 import type { Group } from '~/types/group'
 import type { Timer, TimerState } from '~/types/timer'
+
+function toSeconds(time: string) {
+  return Duration.fromObject({
+    hours: parseInt(time.split(':')[0]),
+    minutes: parseInt(time.split(':')[1]),
+    seconds: parseInt(time.split(':')[2]),
+  }).as('seconds')
+}
 
 class TimerImpl implements Timer {
   group: Group
   limitSeconds: number
-  private startsAt: DateTime | undefined
-  private pausesAt: DateTime | undefined
   remainingSeconds: number
-  private timer: NodeJS.Timer | undefined
+  timerId: number | undefined
   state: TimerState
 
   constructor(group: Group, limit: string) {
     this.group = group
-    this.limitSeconds = this.toSeconds(limit)
-    this.remainingSeconds = this.toSeconds(limit)
+    this.limitSeconds = toSeconds(limit)
+    this.remainingSeconds = toSeconds(limit)
     this.state = 'Stop'
   }
 
@@ -23,50 +29,33 @@ class TimerImpl implements Timer {
       return
     }
 
-    if (this.state === 'Pause') {
-      // ポーズしてた時間分 startsAt を遅らせる
-      this.startsAt = this.startsAt!.plus(this.durationFromNow(this.pausesAt!))
-      this.pausesAt = undefined
-    } else {
-      this.startsAt = DateTime.now()
-    }
-
-    this.timer = setInterval(this.updateRemaining, 1000)
+    this.timerId = window.setInterval(this.updateRemaining, 1000)
     this.state = 'Start'
   }
 
   pause(): void {
-    clearInterval(this.timer)
-    this.pausesAt = DateTime.now()
+    clearInterval(this.timerId)
   }
 
   reset(): void {
-    clearInterval(this.timer)
-    this.startsAt = undefined
+    clearInterval(this.timerId)
     this.remainingSeconds = this.limitSeconds
     this.state = 'Stop'
   }
 
   success(): void {
-    clearInterval(this.timer)
-    this.startsAt = undefined
+    clearInterval(this.timerId)
     this.remainingSeconds = this.limitSeconds
     this.state = 'Stop'
   }
 
   private updateRemaining() {
-    this.remainingSeconds = this.durationFromNow(this.startsAt!).seconds
+    if (this.remainingSeconds > 0) {
+      this.remainingSeconds--
+    } else {
+      clearInterval(this.timerId)
+    }
   }
-
-  private toSeconds = (time: string) =>
-    Duration.fromObject({
-      hours: parseInt(time.split(':')[0]),
-      minutes: parseInt(time.split(':')[1]),
-      seconds: parseInt(time.split(':')[2]),
-    }).as('seconds')
-
-  private durationFromNow = (dateTime: DateTime) =>
-    DateTime.now().diff(dateTime, 'seconds')
 }
 
 export default TimerImpl

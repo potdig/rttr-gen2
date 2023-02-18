@@ -8,6 +8,7 @@ interface Timer {
   limitSeconds: number
   remainingSeconds: number
   state: TimerState
+  timerId: number | undefined
 }
 
 export { Timer, TimerState }
