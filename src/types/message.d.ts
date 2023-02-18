@@ -1,9 +1,14 @@
 import type { Group } from './group'
-import type { Timer } from './timer'
+import type { Timer, TimerState } from './timer'
 
 type UpdateCurrentRunnerArgs = {
   group: Group
   order: number
+}
+
+type ManipulateTimerArgs = {
+  group: Group
+  state: TimerState
 }
 
 export type MessageMap = {
@@ -21,8 +26,8 @@ export type MessageMap = {
     data: Array<string>
     result: boolean
   }
-  updateTimer: {
-    data: Timer
+  manipulateTimer: {
+    data: ManipulateTimerArgs
     result: boolean
   }
 }

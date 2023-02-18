@@ -1,4 +1,4 @@
-import type { Timer } from '~/types/timer'
+import type { Timer, TimerState } from '~/types/timer'
 import type { NodeCG } from '../nodecg'
 
 class TimerManipulator {
@@ -8,7 +8,25 @@ class TimerManipulator {
     this.nodecg = nodecg
   }
 
-  start(timer: Timer) {
+  manipulate(timer: Timer, state: TimerState) {
+    switch (state) {
+      case 'Start':
+        this.start(timer)
+        break
+      case 'Pause':
+        this.pause(timer)
+        break
+      case 'Stop': // reset
+        this.reset(timer)
+        break
+      case 'Success':
+        this.success(timer)
+        break
+    }
+  }
+
+  private start(timer: Timer) {
+    console.log('start')
     if (timer.state === 'Success') {
       return
     }
@@ -46,7 +64,9 @@ class TimerManipulator {
   private applyToReplicant(timer: Timer) {
     const timerRep = this.nodecg.Replicant('timers')
     timerRep.value = timerRep.value
-      ? [...timerRep.value.filter(t => t.group === timer.group)]
+      ? [...timerRep.value.filter(t => t.group !== timer.group)]
       : [timer]
   }
 }
+
+export { TimerManipulator }
