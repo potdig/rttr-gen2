@@ -21,7 +21,7 @@ export class TimerImpl {
   }
 
   public format() {
-    return Duration.fromObject({ seconds: this.limitSeconds }).toFormat(
+    return Duration.fromObject({ seconds: this.remainingSeconds }).toFormat(
       'h:mm:ss'
     )
   }
