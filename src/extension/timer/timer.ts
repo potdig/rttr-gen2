@@ -23,39 +23,6 @@ class TimerImpl implements Timer {
     this.remainingSeconds = toSeconds(limit)
     this.state = 'Stop'
   }
-
-  start(): void {
-    if (this.state === 'Success') {
-      return
-    }
-
-    this.timerId = window.setInterval(this.updateRemaining, 1000)
-    this.state = 'Start'
-  }
-
-  pause(): void {
-    clearInterval(this.timerId)
-  }
-
-  reset(): void {
-    clearInterval(this.timerId)
-    this.remainingSeconds = this.limitSeconds
-    this.state = 'Stop'
-  }
-
-  success(): void {
-    clearInterval(this.timerId)
-    this.remainingSeconds = this.limitSeconds
-    this.state = 'Stop'
-  }
-
-  private updateRemaining() {
-    if (this.remainingSeconds > 0) {
-      this.remainingSeconds--
-    } else {
-      clearInterval(this.timerId)
-    }
-  }
 }
 
 export default TimerImpl
