@@ -11,6 +11,11 @@ export default function setupTimer(nodecg: NodeCG) {
       return
     }
 
+    const oldTimer = timerRep.value.find(t => t.group === timer.group)
+    if (oldTimer) {
+      manipulate(oldTimer, 'Stop')
+    }
+
     timerRep.value = timerRep.value
       ? [...timerRep.value.filter(t => t.group !== timer.group)]
       : [timer]
