@@ -18,8 +18,7 @@ function manipulate(timer: Timer, state: TimerState) {
 }
 
 function start(timer: Timer) {
-  console.log('start')
-  if (timer.state === 'Success') {
+  if (timer.state === 'Start' || timer.state === 'Success') {
     return
   }
 
@@ -29,12 +28,24 @@ function start(timer: Timer) {
 }
 
 function pause(timer: Timer) {
+  if (
+    timer.state === 'Pause' ||
+    timer.state === 'Stop' ||
+    timer.state === 'Success'
+  ) {
+    return
+  }
+
   clearInterval(timer.timerId)
   timer.state = 'Pause'
   applyToReplicant(timer)
 }
 
 function reset(timer: Timer) {
+  if (timer.state === 'Stop' || timer.state === 'Success') {
+    return
+  }
+
   clearInterval(timer.timerId)
   timer.remainingSeconds = timer.limitSeconds
   timer.state = 'Stop'
@@ -42,6 +53,10 @@ function reset(timer: Timer) {
 }
 
 function success(timer: Timer) {
+  if (timer.state === 'Success') {
+    return
+  }
+
   clearInterval(timer.timerId)
   timer.remainingSeconds = timer.limitSeconds
   timer.state = 'Stop'
