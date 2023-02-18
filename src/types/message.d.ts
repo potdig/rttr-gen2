@@ -26,6 +26,10 @@ export type MessageMap = {
     data: Array<string>
     result: boolean
   }
+  updateTimer: {
+    data: Timer
+    result: boolean
+  }
   manipulateTimer: {
     data: ManipulateTimerArgs
     result: boolean

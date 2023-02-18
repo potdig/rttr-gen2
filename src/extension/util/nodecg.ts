@@ -1,13 +1,11 @@
 import type { NodeCG } from '../nodecg'
 
-let instance: NodeCG
-
-function get() {
-  return instance
+declare global {
+  var nodecg: NodeCG
 }
 
 function set(instance: NodeCG) {
-  return instance
+  globalThis.nodecg = instance
 }
 
-export { get, set }
+export { set }
