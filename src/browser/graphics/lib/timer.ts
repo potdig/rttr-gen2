@@ -25,4 +25,8 @@ export class TimerImpl {
       'h:mm:ss'
     )
   }
+
+  public percentage() {
+    return (this.remainingSeconds / this.limitSeconds) * 100
+  }
 }

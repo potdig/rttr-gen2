@@ -1,9 +1,12 @@
 <script lang="ts">
+  import { timerFor } from '~/browser/store/timer'
   import { colorFor } from './common-color'
 
   export let mirrorId
   export let progressWidth
 
+  $: timer = timerFor(mirrorId)
+  $: polygonPercentage = 100 - $timer?.percentage()
   $: color = colorFor(mirrorId)
 </script>
 
@@ -18,7 +21,7 @@
     <div id="progress-bar" style="border-color: {color}">
       <div
         id="remaining-progress"
-        style="clip-path: polygon(0% 20%, 100% 20%, 100% 100%, 0% 100%)"
+        style="clip-path: polygon(0% {polygonPercentage}%, 100% {polygonPercentage}%, 100% 100%, 0% 100%)"
       />
     </div>
   </div>
