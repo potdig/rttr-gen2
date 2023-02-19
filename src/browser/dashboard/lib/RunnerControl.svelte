@@ -47,7 +47,7 @@
   <p>目標タイム: {$runner?.targetTime}</p>
   <p>持ち時間: {$runner?.limitTime}</p>
   <p>Twitter: {$runner?.twitter}</p>
-  <p>配信先: {$runner?.streamLink}</p>
+  <p>配信先: {$runner?.streamText}</p>
 </div>
 
 <style scoped>

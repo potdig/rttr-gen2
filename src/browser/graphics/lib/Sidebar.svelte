@@ -55,7 +55,7 @@
         <p class="label">Twitter</p>
         <p class="value">{$runner?.twitter}</p>
         <p class="label">配信先</p>
-        <p class="value">{$runner?.streamLink}</p>
+        <p class="value">{$runner?.streamText}</p>
       </div>
     </div>
   </div>

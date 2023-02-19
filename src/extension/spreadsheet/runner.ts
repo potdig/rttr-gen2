@@ -38,7 +38,7 @@ function loadRunnersFromSpreadsheet(group: Group) {
         personalBest: runner.personal_best,
         limitTime: runner.limit_time,
         twitter: runner.twitter,
-        streamLink: runner.stream_link,
+        streamText: runner.stream_text,
         icon: runner.icon,
       }))
       const runnersRep = nodecg.Replicant('runners')

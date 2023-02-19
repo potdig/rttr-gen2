@@ -14,7 +14,7 @@ const runners: Array<Runner> = [
     personalBest: '1:10:00',
     limitTime: '3:00:00',
     twitter: '@runner_a1',
-    streamLink: 'https://twitch.com/runner_a1',
+    streamText: 'Twitch: runner_a1',
     icon: 'a.png',
   },
   {
@@ -28,7 +28,7 @@ const runners: Array<Runner> = [
     personalBest: '1:10:00',
     limitTime: '3:00:00',
     twitter: '@runner_b1',
-    streamLink: 'https://twitch.com/runner_b1',
+    streamText: 'Twitch: runner_b1',
     icon: 'b.png',
   },
   {
@@ -42,7 +42,7 @@ const runners: Array<Runner> = [
     personalBest: '1:10:00',
     limitTime: '3:00:00',
     twitter: '@runner_c1',
-    streamLink: 'https://twitch.com/runner_c1',
+    streamText: 'Twitch: runner_c1',
     icon: 'c.png',
   },
   {
@@ -56,7 +56,7 @@ const runners: Array<Runner> = [
     personalBest: '1:10:00',
     limitTime: '3:00:00',
     twitter: '@runner_d1',
-    streamLink: 'https://twitch.com/runner_d1',
+    streamText: 'Twitch: runner_d1',
     icon: 'd.png',
   },
   {
@@ -70,7 +70,7 @@ const runners: Array<Runner> = [
     personalBest: '1:10:00',
     limitTime: '3:00:00',
     twitter: '@runner_a2',
-    streamLink: 'https://twitch.com/runner_a2',
+    streamText: 'Twitch: runner_a2',
     icon: 'a.png',
   },
   {
@@ -84,7 +84,7 @@ const runners: Array<Runner> = [
     personalBest: '1:10:00',
     limitTime: '3:00:00',
     twitter: '@runner_b2',
-    streamLink: 'https://twitch.com/runner_b2',
+    streamText: 'Twitch: runner_b2',
     icon: 'b.png',
   },
   {
@@ -98,7 +98,7 @@ const runners: Array<Runner> = [
     personalBest: '1:10:00',
     limitTime: '3:00:00',
     twitter: '@runner_c2',
-    streamLink: 'https://twitch.com/runner_c2',
+    streamText: 'Twitch: runner_c2',
     icon: 'c.png',
   },
   {
@@ -112,7 +112,7 @@ const runners: Array<Runner> = [
     personalBest: '1:10:00',
     limitTime: '3:00:00',
     twitter: '@runner_d2',
-    streamLink: 'https://twitch.com/runner_d2',
+    streamText: 'Twitch: runner_d2',
     icon: 'd.png',
   },
 ]

@@ -11,6 +11,6 @@ export type Runner = {
   personalBest: string
   limitTime: string
   twitter: string
-  streamLink: string
+  streamText: string
   icon: string
 }
