@@ -8,6 +8,10 @@
 
   let currentMCs: Array<string>
 
+  function loadFromSpreadsheet() {
+    window.nodecg.sendMessage('updateCommentator')
+  }
+
   function applyCurrentMCs() {
     updateCurrentMC(currentMCs)
   }
@@ -18,6 +22,8 @@
 </script>
 
 <div>
+  <button on:click={loadFromSpreadsheet}>解説情報を更新</button>
+  <br />
   <select multiple bind:value={currentMCs}>
     {#each $mcs as mc}<option value={mc.name}>{mc.name}</option>{/each}
   </select>
