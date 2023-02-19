@@ -35,8 +35,6 @@
 <style lang="scss" scoped>
   @import 'stylesheet/common.scss';
 
-  $blackBackground: linear-gradient(#333, #222);
-
   #video-parts {
     display: grid;
     width: 100%;
