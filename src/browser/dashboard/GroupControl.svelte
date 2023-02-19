@@ -6,5 +6,5 @@
   export let mirrorId: Group
 </script>
 
-<RunnerControl {mirrorId} />
 <TimeControl {mirrorId} />
+<RunnerControl {mirrorId} />

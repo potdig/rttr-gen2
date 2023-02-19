@@ -102,7 +102,7 @@
       align-items: center;
 
       #rb-logo {
-        width: 30%;
+        width: 26%;
         margin-left: 0.5em;
       }
     }

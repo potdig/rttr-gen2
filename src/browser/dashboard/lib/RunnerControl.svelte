@@ -33,10 +33,9 @@
 <div>
   <p id="subject">走者</p>
   <div id="buttons">
-    <button on:click={toggleSetup}>{setupButtonText}</button>
     <button on:click={prev}>前走者</button>
     <button on:click={next}>次走者</button>
-    <br />
+    <button on:click={toggleSetup}>{setupButtonText}</button>
     <button on:click={loadFromSpreadsheet}>走者情報を更新</button>
   </div>
   <img id="iconImage" src={iconPath} alt="icon" />
@@ -52,7 +51,10 @@
 </div>
 
 <style scoped>
-  button {
+  #buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.2em;
     margin-bottom: 0.2em;
   }
 
