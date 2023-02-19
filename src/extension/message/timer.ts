@@ -37,4 +37,14 @@ export default function setupTimer(nodecg: NodeCG) {
 
     cb && cb(null, true)
   })
+
+  nodecg.listenFor('manipulateAllTimer', (state, cb) => {
+    if (!cb || cb.handled) {
+      return
+    }
+
+    timerRep.value.forEach(timer => manipulate(timer, state))
+
+    cb && cb(null, true)
+  })
 }
