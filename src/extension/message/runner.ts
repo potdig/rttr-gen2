@@ -11,11 +11,11 @@ export default function setupRunners(nodecg: NodeCG) {
     loadRunnersFromSpreadsheet(group)
   })
 
-  nodecg.listenFor('updateRunner', (_, cb) => {
+  nodecg.listenFor('updateRunner', (group, cb) => {
     if (!cb || cb.handled) {
       return
     }
-    console.log('update runner with data on spreadsheet')
+    loadRunnersFromSpreadsheet(group)
     cb && cb(null, true)
   })
 }

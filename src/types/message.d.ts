@@ -13,6 +13,7 @@ type ManipulateTimerArgs = {
 
 export type MessageMap = {
   updateRunner: {
+    data: Group
     result: boolean
   }
   updateCommentator: {

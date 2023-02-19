@@ -24,6 +24,10 @@
   function toggleSetup() {
     window.nodecg.sendMessage('toggleRunnerSetup', mirrorId)
   }
+
+  function loadFromSpreadsheet() {
+    window.nodecg.sendMessage('updateRunner', mirrorId)
+  }
 </script>
 
 <div>
@@ -32,6 +36,8 @@
     <button on:click={toggleSetup}>{setupButtonText}</button>
     <button on:click={prev}>前走者</button>
     <button on:click={next}>次走者</button>
+    <br />
+    <button on:click={loadFromSpreadsheet}>走者情報を更新</button>
   </div>
   <img id="iconImage" src={iconPath} alt="icon" />
   <p>名前: {$runner?.name}</p>
