@@ -5,7 +5,7 @@ import { groups } from '~/util/groups'
 import { currentRunner } from './runner'
 
 const commentators: Readable<Array<Commentator>> = readable([], set => {
-  window.nodecg.Replicant('commentators').on('change', (newValue, _) => {
+  window.nodecg.Replicant('commentators').on('change', newValue => {
     set(newValue)
   })
 })

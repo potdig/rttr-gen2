@@ -10,7 +10,7 @@ import type { Group } from '~/types/group'
 import type { Runner } from '~/types/runner'
 
 const runners: Readable<Array<Runner>> = readable([], set => {
-  window.nodecg.Replicant('runners').on('change', (newValue, _) => {
+  window.nodecg.Replicant('runners').on('change', newValue => {
     set(newValue)
   })
 
@@ -18,7 +18,7 @@ const runners: Readable<Array<Runner>> = readable([], set => {
 })
 
 const currentOrders: Writable<Array<[Group, number]>> = writable([], set => {
-  window.nodecg.Replicant('currentRunners').on('change', (newValue, _) => {
+  window.nodecg.Replicant('currentRunners').on('change', newValue => {
     set(newValue)
   })
 
