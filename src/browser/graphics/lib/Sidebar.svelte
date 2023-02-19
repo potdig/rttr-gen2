@@ -3,11 +3,11 @@
   import { colorFor } from './common-color'
   import { currentRunner } from '~/browser/store/runner'
   import { timerFor } from '~/browser/store/timer'
+  import Shutter from './Shutter.svelte'
 
   export let mirrorId: Group
   $: runner = currentRunner(mirrorId)
   $: timer = timerFor(mirrorId)
-  console.log($timer)
   $: iconPath = `/assets/rttr-gen2/runner-icons/${$runner?.icon}`
 </script>
 
@@ -27,29 +27,32 @@
     </p>
   </div>
   <div id="info" style="border-color: {colorFor(mirrorId)}">
-    <div id="runner">
-      <div id="mirror-id">
-        <span>{mirrorId}</span>
+    <Shutter {mirrorId} />
+    <div id="value">
+      <div id="runner">
+        <div id="mirror-id">
+          <span>{mirrorId}</span>
+        </div>
+        <img id="icon" src={iconPath} alt="icon" />
+        <p id="name">{$runner?.name}</p>
+        <p id="timer">{$timer?.format()}</p>
       </div>
-      <img id="icon" src={iconPath} alt="icon" />
-      <p id="name">{$runner?.name}</p>
-      <p id="timer">{$timer?.format()}</p>
-    </div>
-    <div id="description">
-      <p class="label">ゲーム名</p>
-      <p class="value">{$runner?.gameTitle}</p>
-      <p class="label">カテゴリ</p>
-      <p class="value">{$runner?.category}</p>
-      <p class="label">使用ハード</p>
-      <p class="value">{$runner?.console}</p>
-      <p class="label">PBタイム</p>
-      <p class="value">{$runner?.personalBest}</p>
-      <p class="label">目標タイム</p>
-      <p class="value">{$runner?.targetTime}</p>
-      <p class="label">Twitter</p>
-      <p class="value">{$runner?.twitter}</p>
-      <p class="label">配信先</p>
-      <p class="value">{$runner?.streamLink}</p>
+      <div id="description">
+        <p class="label">ゲーム名</p>
+        <p class="value">{$runner?.gameTitle}</p>
+        <p class="label">カテゴリ</p>
+        <p class="value">{$runner?.category}</p>
+        <p class="label">使用ハード</p>
+        <p class="value">{$runner?.console}</p>
+        <p class="label">PBタイム</p>
+        <p class="value">{$runner?.personalBest}</p>
+        <p class="label">目標タイム</p>
+        <p class="value">{$runner?.targetTime}</p>
+        <p class="label">Twitter</p>
+        <p class="value">{$runner?.twitter}</p>
+        <p class="label">配信先</p>
+        <p class="value">{$runner?.streamLink}</p>
+      </div>
     </div>
   </div>
   <div id="camera" />
@@ -109,6 +112,19 @@
     border: $border;
     border-right: 0px;
     width: calc(100% - $borderSize);
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+
+    & > * {
+      position: absolute;
+    }
+
+    #value {
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
   }
 
   #runner {

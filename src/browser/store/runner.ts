@@ -25,6 +25,12 @@ const currentOrders: Writable<Array<[Group, number]>> = writable([], set => {
   return () => {}
 })
 
+const settingUp: Readable<Array<[Group, boolean]>> = readable([], set => {
+  window.nodecg.Replicant('isSettingUp').on('change', newValue => {
+    set(newValue)
+  })
+})
+
 function nextRunner(group: Group) {
   currentOrders.update(orders => {
     // order が 指定グループでの走者数を超える場合は何もしない
@@ -65,4 +71,13 @@ const currentRunner = (group: Group): Readable<Runner> =>
     )
   })
 
-export { currentRunner, nextRunner, prevRunner }
+const isSettingUp = (group: Group): Readable<boolean> =>
+  derived(settingUp, $settingUp => {
+    if (!$settingUp || $settingUp.length === 0) {
+      return false
+    }
+
+    return $settingUp?.find(groupSetup => groupSetup[0] === group)[1]
+  })
+
+export { currentRunner, nextRunner, prevRunner, isSettingUp }
