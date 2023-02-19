@@ -21,6 +21,10 @@ export class TimerImpl {
   }
 
   public format() {
+    if (this.state === 'Success') {
+      return 'New PB!'
+    }
+
     return Duration.fromObject({ seconds: this.remainingSeconds }).toFormat(
       'h:mm:ss'
     )
