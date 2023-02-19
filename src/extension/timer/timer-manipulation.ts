@@ -42,7 +42,7 @@ function pause(timer: Timer) {
 }
 
 function reset(timer: Timer) {
-  if (timer.state === 'Stop' || timer.state === 'Success') {
+  if (timer.state === 'Stop') {
     return
   }
 
@@ -59,7 +59,7 @@ function success(timer: Timer) {
 
   clearInterval(timer.timerId)
   timer.remainingSeconds = timer.limitSeconds
-  timer.state = 'Stop'
+  timer.state = 'Success'
   applyToReplicant(timer)
 }
 
