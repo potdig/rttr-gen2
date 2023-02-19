@@ -48,7 +48,7 @@ function loadRunnersFromSpreadsheet(group: Group) {
             .concat(loaded)
         : loaded
     })
-    .catch(e => console.error(`Failed to load runners of group ${group}`, e))
+    .catch(e => console.error(`Failed to load runners of group: ${group}`, e))
 }
 
 export { loadRunnersFromSpreadsheet }
