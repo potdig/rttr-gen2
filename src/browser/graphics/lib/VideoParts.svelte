@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { isSettingUp } from '~/browser/store/runner'
   import { timerFor } from '~/browser/store/timer'
   import { colorFor } from './common-color'
 
   export let mirrorId
   export let progressWidth
 
+  $: setup = isSettingUp(mirrorId)
   $: timer = timerFor(mirrorId)
-  $: polygonPercentage = 100 - $timer?.percentage()
+  $: polygonPercentage = $setup ? 100 : 100 - $timer?.percentage()
   $: color = colorFor(mirrorId)
 </script>
 
