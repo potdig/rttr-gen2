@@ -25,6 +25,10 @@ export class TimerImpl {
       return 'New PB!'
     }
 
+    if (this.remainingSeconds <= 0) {
+      return 'Time up'
+    }
+
     return Duration.fromObject({ seconds: this.remainingSeconds }).toFormat(
       'h:mm:ss'
     )
