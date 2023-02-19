@@ -38,4 +38,8 @@ export type MessageMap = {
     data: Group
     result: boolean
   }
+  updateSetupText: {
+    data: string
+    result: boolean
+  }
 }

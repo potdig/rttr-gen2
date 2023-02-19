@@ -16,6 +16,7 @@ export default defineConfig({
         'graphics/b': resolve(__dirname, 'graphics/b/index.html'),
         'graphics/c': resolve(__dirname, 'graphics/c/index.html'),
         'graphics/d': resolve(__dirname, 'graphics/d/index.html'),
+        'graphics/setup': resolve(__dirname, 'graphics/setup/index.html'),
         'dashboard/group-control/a': resolve(
           __dirname,
           'dashboard/group-control/a/index.html'
