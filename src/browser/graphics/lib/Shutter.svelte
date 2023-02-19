@@ -10,6 +10,8 @@
 <div id="shutter" class={shutterClass}>Setting up...</div>
 
 <style lang="scss">
+  @import 'stylesheet/common.scss';
+
   #shutter {
     position: absolute;
     z-index: 999;
@@ -20,8 +22,10 @@
     align-items: center;
     left: 0;
     top: -100%;
-    color: white;
-    background-color: black;
+    color: rgba($color: white, $alpha: 0.5);
+    background: $blackBackground;
+    font-size: 2em;
+    font-family: 'Fira Sans Condensed', sans-serif;
     transition: top 1s cubic-bezier(0.33, 1, 0.68, 1);
 
     &.setup {
