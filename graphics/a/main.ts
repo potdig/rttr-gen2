@@ -1,7 +1,7 @@
-import '../../src/browser/graphics/graphics.css'
-import Graphics from '../../src/browser/graphics/Graphics.svelte'
+import '~/browser/graphics/main-view.css'
+import MainView from '~/browser/graphics/MainView.svelte'
 
-const app = new Graphics({
+const app = new MainView({
   target: document.getElementById('app'),
   props: {
     mirrorId: 'A',
