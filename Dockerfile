@@ -30,5 +30,6 @@ COPY --from=nodecg /app/nodecg ./nodecg
 COPY --from=build_app /build/dist ./nodecg/bundles/${LAYOUTS_NAME}/
 COPY --from=nodecg_modules /build/node_modules ./nodecg/bundles/${LAYOUTS_NAME}/node_modules
 COPY package-nodecg.json ./nodecg/bundles/${LAYOUTS_NAME}/package.json
+COPY cfg ./nodecg/cfg
 WORKDIR /app/nodecg
 CMD ["node", "index.js"]
