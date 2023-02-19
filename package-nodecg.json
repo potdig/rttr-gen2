@@ -66,6 +66,12 @@
         "name": "commentators",
         "title": "MC・解説",
         "file": "commentator/index.html"
+      },
+      {
+        "width": "3",
+        "name": "common-control",
+        "title": "その他",
+        "file": "common-control/index.html"
       }
     ],
     "assetCategories": [

@@ -37,6 +37,10 @@ export default defineConfig({
           __dirname,
           'dashboard/commentator/index.html'
         ),
+        'dashboard/common-control': resolve(
+          __dirname,
+          'dashboard/common-control/index.html'
+        ),
       },
       output: {
         assetFileNames: 'web-assets/[name]-[hash][extname]',
