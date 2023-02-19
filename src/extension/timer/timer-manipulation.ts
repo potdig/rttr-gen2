@@ -65,6 +65,9 @@ function success(timer: Timer) {
 
 function updateRemaining(timer: Timer) {
   timer.remainingSeconds--
+  if (timer.remainingSeconds <= 0) {
+    clearInterval(timer.timerId)
+  }
   applyToReplicant(timer)
 }
 
