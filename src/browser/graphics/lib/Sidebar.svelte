@@ -2,13 +2,17 @@
   import type { Group } from '~/types/group'
   import { colorFor } from './common-color'
   import { currentRunner } from '~/browser/store/runner'
+  import { currentCommentators } from '~/browser/store/commentator'
   import { timerFor } from '~/browser/store/timer'
   import Shutter from './Shutter.svelte'
 
+  const commentatorIconPathPrefix = '/assets/rttr-gen2/commentator-icons/'
+
   export let mirrorId: Group
   $: runner = currentRunner(mirrorId)
+  $: commentators = currentCommentators
   $: timer = timerFor(mirrorId)
-  $: iconPath = `/assets/rttr-gen2/runner-icons/${$runner?.icon}`
+  $: runnerIconPath = `/assets/rttr-gen2/runner-icons/${$runner?.icon}`
 </script>
 
 <div id="side">
@@ -33,7 +37,7 @@
         <div id="mirror-id">
           <span>{mirrorId}</span>
         </div>
-        <img id="icon" src={iconPath} alt="icon" />
+        <img id="icon" src={runnerIconPath} alt="icon" />
         <p id="name">{$runner?.name}</p>
         <p id="timer">{$timer?.format()}</p>
       </div>
@@ -58,6 +62,12 @@
   <div id="camera" />
   <div id="commentators">
     <p class="label">MC・解説</p>
+    <div id="icon-names">
+      {#each $commentators as commentator}
+        <img src={commentatorIconPathPrefix + commentator.icon} alt="icon" />
+        <p>{commentator.name}</p>
+      {/each}
+    </div>
   </div>
 </div>
 
@@ -197,6 +207,21 @@
       font-weight: bold;
       background-color: $backgroundForLabel;
       padding: 0.2em 0.4em;
+    }
+
+    #icon-names {
+      display: grid;
+      grid-template-rows: 50px max-content;
+      grid-template-columns: max-content;
+      justify-content: center;
+      gap: 0.1em 0.8em;
+      grid-auto-flow: column;
+      font-size: 1.2em;
+
+      img {
+        height: 100%;
+        margin: auto;
+      }
     }
   }
 </style>
