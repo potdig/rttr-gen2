@@ -10,9 +10,13 @@ type CommentatorAPIResponse = {
 }
 
 function separateToGroupAndOrder(linkId: string): GroupOrder {
+  if (linkId === 'MC') {
+    return 'MC'
+  }
+
   return linkId.length === 2
     ? [linkId.charAt(0) as Group, parseInt(linkId.charAt(1))]
-    : 'MC'
+    : ''
 }
 
 function loadCommentatorsFromSpreadsheet() {
