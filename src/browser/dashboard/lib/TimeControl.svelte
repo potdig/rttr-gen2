@@ -41,7 +41,6 @@
     <!--
             <br>
             <button id="reloadButton" onclick="reload();">更新</button>
-            <button id="setupButton" onclick="setupRunner();">準備中にする</button>
             <button id="finishButton" onclick="finishRunner();">終了にする</button>
 -->
   </div>
