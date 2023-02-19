@@ -151,4 +151,11 @@ const currentRunners: Array<[Group, number]> = [
   ['D', 1],
 ]
 
-export { runners, commentators, currentRunners }
+const isSettingUp: Array<[Group, boolean]> = [
+  ['A', false],
+  ['B', false],
+  ['C', false],
+  ['D', false],
+]
+
+export { runners, commentators, currentRunners, isSettingUp }

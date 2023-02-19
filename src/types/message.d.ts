@@ -34,4 +34,8 @@ export type MessageMap = {
     data: ManipulateTimerArgs
     result: boolean
   }
+  toggleRunnerSetup: {
+    data: Group
+    result: boolean
+  }
 }

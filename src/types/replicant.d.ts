@@ -9,5 +9,6 @@ export type ReplicantMap = {
   currentRunners: Array<[Group, number]>
   timers: Array<Timer>
   currentMC: Array<string>
+  isSettingUp: Array<[Group, boolean]>
   setupText: string
 }
