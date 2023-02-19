@@ -17,7 +17,7 @@ const runners: Readable<Array<Runner>> = readable([], set => {
   return () => {}
 })
 
-const currentOrders: Writable<Array<[Group, number]>> = writable([], set => {
+const currentOrders: Readable<Array<[Group, number]>> = readable([], set => {
   window.nodecg.Replicant('currentRunners').on('change', newValue => {
     set(newValue)
   })
@@ -32,33 +32,25 @@ const settingUp: Readable<Array<[Group, boolean]>> = readable([], set => {
 })
 
 function nextRunner(group: Group) {
-  currentOrders.update(orders => {
-    // order が 指定グループでの走者数を超える場合は何もしない
-    const old = orders.find(currentOrder => currentOrder[0] === group)
-    if (old[1] < get(runners).filter(runner => runner.group === group).length) {
-      window.nodecg.sendMessage('updateCurrentRunner', {
-        group,
-        order: old[1] + 1,
-      })
-    }
-
-    return orders
-  })
+  // order が 指定グループでの走者数を超える場合は何もしない
+  const old = get(currentOrders).find(currentOrder => currentOrder[0] === group)
+  if (old[1] < get(runners).filter(runner => runner.group === group).length) {
+    window.nodecg.sendMessage('updateCurrentRunner', {
+      group,
+      order: old[1] + 1,
+    })
+  }
 }
 
 function prevRunner(group: Group) {
-  currentOrders.update(orders => {
-    // order が 1 を下回る場合は何もしない
-    const old = orders.find(currentOrder => currentOrder[0] === group)
-    if (old[1] > 1) {
-      window.nodecg.sendMessage('updateCurrentRunner', {
-        group,
-        order: old[1] - 1,
-      })
-    }
-
-    return orders
-  })
+  // order が 1 を下回る場合は何もしない
+  const old = get(currentOrders).find(currentOrder => currentOrder[0] === group)
+  if (old[1] > 1) {
+    window.nodecg.sendMessage('updateCurrentRunner', {
+      group,
+      order: old[1] - 1,
+    })
+  }
 }
 
 const currentRunner = (group: Group): Readable<Runner> =>
