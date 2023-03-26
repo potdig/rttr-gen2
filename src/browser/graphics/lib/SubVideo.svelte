@@ -78,6 +78,9 @@
         align-items: center;
         width: 100%;
         height: 100%;
+        font-family: 'DSEG14-Classic';
+        font-weight: bold;
+        font-style: italic;
       }
     }
   }

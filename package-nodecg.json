@@ -88,7 +88,7 @@
       {
         "name": "materials",
         "title": "素材",
-        "allowedTypes": ["jpg", "jpeg", "gif", "png"]
+        "allowedTypes": ["png", "woff2"]
       }
     ],
     "mount": [
