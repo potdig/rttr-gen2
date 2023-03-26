@@ -21,7 +21,7 @@
       <div id="progress-bar" style="border-color: {color}">
         <div
           id="remaining-progress"
-          style="clip-path: polygon(0% {polygonPercentage}%, 100% {polygonPercentage}%, 100% 100%, 0% 100%)"
+          style="clip-path: polygon({polygonPercentage}% 0%, 100% 0%, 100% 100%, {polygonPercentage}% 100%)"
         />
       </div>
     </div>
