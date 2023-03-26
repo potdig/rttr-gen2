@@ -3,7 +3,6 @@
   import { colorFor } from './common-color'
   import { currentRunner } from '~/browser/store/runner'
   import { currentCommentators } from '~/browser/store/commentator'
-  import { timerFor } from '~/browser/store/timer'
   import Shutter from './Shutter.svelte'
 
   const commentatorIconPathPrefix = '/assets/rttr-gen2/commentator-icons/'
