@@ -11,7 +11,6 @@
   export let mirrorId: Group
   $: runner = currentRunner(mirrorId)
   $: commentators = currentCommentators
-  $: timer = timerFor(mirrorId)
   $: runnerIconPath = `/assets/rttr-gen2/runner-icons/${$runner?.icon}`
 </script>
 
@@ -38,7 +37,6 @@
         </div>
         <img id="icon" src={runnerIconPath} alt="icon" />
         <p id="name">{$runner?.name}</p>
-        <p id="timer">{$timer?.format()}</p>
       </div>
       <div id="description">
         <p class="label">ゲーム名</p>
@@ -154,12 +152,6 @@
 
     #name {
       padding-left: 0.2em;
-    }
-
-    #timer {
-      font-family: 'Fira Code', monospace;
-      margin-left: auto;
-      font-size: $runnerHeight - 12px;
     }
   }
 
