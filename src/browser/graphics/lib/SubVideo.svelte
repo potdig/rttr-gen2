@@ -23,6 +23,7 @@
           id="remaining-progress"
           style="clip-path: polygon(0% {polygonPercentage}%, 100% {polygonPercentage}%, 100% 100%, 0% 100%)"
         />
+        <p id="timer">{$timer?.format()}</p>
       </div>
     </div>
     <div id="video" style="border-color: {color}">
@@ -60,12 +61,22 @@
 
     #progress-bar {
       display: flex;
+      position: relative;
       flex-direction: column;
       justify-content: end;
       background: $blackBackground;
 
       #remaining-progress {
         background: linear-gradient(yellow, gold);
+        height: 100%;
+      }
+
+      #timer {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
         height: 100%;
       }
     }
