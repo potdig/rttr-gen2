@@ -19,7 +19,7 @@
   #game-area {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: max-content 1fr;
+    grid-template-rows: 1fr max-content max-content;
     width: 100%;
   }
 </style>

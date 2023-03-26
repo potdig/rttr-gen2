@@ -74,7 +74,6 @@
 <style lang="scss" scoped>
   @import 'stylesheet/common.scss';
 
-  $sidebarWidth: $viewWidth * 0.3;
   $backgroundForLabel: rgba(
     $color: white,
     $alpha: 0.6,
