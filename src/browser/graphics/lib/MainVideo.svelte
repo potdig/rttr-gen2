@@ -82,6 +82,10 @@
         font-family: 'DSEG14-Classic';
         font-weight: bold;
         font-style: italic;
+        font-size: calc($mainProgressWidth - 16px);
+        color: dimgray;
+        mix-blend-mode: multiply;
+        opacity: 0.8;
       }
     }
   }
