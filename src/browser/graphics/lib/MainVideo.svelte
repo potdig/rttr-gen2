@@ -8,6 +8,7 @@
 
   $: setup = isSettingUp(mirrorId)
   $: timer = timerFor(mirrorId)
+  $: time = $setup ? '-:--:--' : $timer?.format()
   $: polygonPercentage = $setup ? 100 : 100 - $timer?.percentage()
   $: color = colorFor(mirrorId)
 </script>
@@ -23,7 +24,7 @@
           id="remaining-progress"
           style="clip-path: polygon({polygonPercentage}% 0%, 100% 0%, 100% 100%, {polygonPercentage}% 100%)"
         />
-        <p id="timer">{$timer?.format()}</p>
+        <p id="timer">{time}</p>
       </div>
     </div>
     <div id="video" style="border-color: {color}">
