@@ -3,14 +3,14 @@ $viewHeight: 1080px;
 $borderSize: 4px;
 $border: $borderSize solid;
 
-$sidebarWidth: $viewWidth / 3;
+$sidebarWidth: calc($viewWidth / 3);
 $gameAreaWidth: $viewWidth - $sidebarWidth;
 
 $mainVideoWidth: $gameAreaWidth;
-$mainVideoHeight: $mainVideoWidth / 16 * 9;
+$mainVideoHeight: calc($mainVideoWidth / 16 * 9);
 $mainProgressWidth: 70px;
-$subVideoWidth: $gameAreaWidth / 3;
-$subVideoHeight: $subVideoWidth / 16 * 9;
+$subVideoWidth: calc($gameAreaWidth / 3);
+$subVideoHeight: calc($subVideoWidth / 16 * 9);
 $subProgressWidth: 50px;
 
 $blackBackground: linear-gradient(#333, #222);
