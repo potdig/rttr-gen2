@@ -16,20 +16,19 @@
 </script>
 
 <div id="side">
-  <div id="logo">
+  <p id="logo">
     <img
       id="rttr-logo"
       src="/assets/rttr-gen2/materials/rttr_logo.png"
       alt="Logo of RttR"
     />
-    <p id="rb">
-      Powered by <img
-        id="rb-logo"
-        src="/assets/rttr-gen2/materials/rb_logo.png"
-        alt="Logo of RttR"
-      />
-    </p>
-  </div>
+    <span>in</span>
+    <img
+      id="rb-logo"
+      src="/assets/rttr-gen2/materials/rb_logo.png"
+      alt="Logo of RttR"
+    />
+  </p>
   <div id="info" style="border-color: {colorFor(mirrorId)}">
     <Shutter {mirrorId} />
     <div id="value">
@@ -94,26 +93,21 @@
   }
 
   #logo {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr max-content max-content;
     align-items: center;
-    margin-bottom: 12px;
+    gap: 0.4em;
+    margin-block: 12px;
+    font-size: 2.4em;
+    font-family: 'Fira Sans Condensed', sans-serif;
 
     #rttr-logo {
       width: 100%;
     }
 
-    #rb {
-      font-size: 2.4em;
-      font-family: 'Fira Sans Condensed', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      #rb-logo {
-        width: 26%;
-        margin-left: 0.5em;
-      }
+    #rb-logo {
+      width: 140px;
+      padding-right: 10px;
     }
   }
 
