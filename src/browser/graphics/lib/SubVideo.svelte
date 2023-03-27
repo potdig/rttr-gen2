@@ -1,32 +1,16 @@
 <script lang="ts">
   import type { Group } from '~/types/group'
-  import { isSettingUp } from '~/browser/store/runner'
-  import { timerFor } from '~/browser/store/timer'
   import { colorFor } from './common-color'
+  import ProgressBar from './ProgressBar.svelte'
 
   export let mirrorId: Group
 
-  $: setup = isSettingUp(mirrorId)
-  $: timer = timerFor(mirrorId)
-  $: time = $setup ? '-:--:--' : $timer?.format()
-  $: polygonPercentage = $setup ? 100 : 100 - $timer?.percentage()
   $: color = colorFor(mirrorId)
 </script>
 
 <div id="sub-game">
   <div id="video-parts">
-    <div id="progress" style="">
-      <p id="mirror-id" style="background-color: {color}; ">
-        <span>{mirrorId}</span>
-      </p>
-      <div id="progress-bar" style="border-color: {color}">
-        <div
-          id="remaining-progress"
-          style="clip-path: polygon(0% {polygonPercentage}%, 100% {polygonPercentage}%, 100% 100%, 0% 100%)"
-        />
-        <p id="timer">{time}</p>
-      </div>
-    </div>
+    <ProgressBar {mirrorId} videoType="sub" />
     <div id="video" style="border-color: {color}">
       <img src="/assets/rttr-gen2/materials/rttr_logo.png" alt="rttr_logo" />
     </div>
@@ -46,48 +30,6 @@
     grid-template-rows: $subProgressWidth $subVideoHeight;
     width: 100%;
     height: 100%;
-  }
-
-  #progress {
-    grid-template-columns: $subProgressWidth 1fr;
-    display: grid;
-
-    #mirror-id {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Fira Sans Condensed', sans-serif;
-      font-size: calc($subProgressWidth - 10px);
-    }
-
-    #progress-bar {
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      justify-content: end;
-      background: $blackBackground;
-
-      #remaining-progress {
-        background: linear-gradient(yellow, gold);
-        height: 100%;
-      }
-
-      #timer {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        font-family: 'DSEG14-Classic';
-        font-weight: bold;
-        font-style: italic;
-        font-size: calc($subProgressWidth - 16px);
-        color: dimgray;
-        mix-blend-mode: multiply;
-        opacity: 0.8;
-      }
-    }
   }
 
   #video {
