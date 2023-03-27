@@ -37,4 +37,8 @@ export class TimerImpl {
   public percentage() {
     return (this.remainingSeconds / this.limitSeconds) * 100
   }
+
+  public isSuccess() {
+    return this.state === 'Success'
+  }
 }

@@ -21,6 +21,7 @@
   <div id="progress-bar" style="border-color: {color}">
     <div
       id="remaining-progress"
+      class={$timer?.isSuccess() ? 'success' : ''}
       style="clip-path: polygon({polygonPercentage}% 0%, 100% 0%, 100% 100%, {polygonPercentage}% 100%)"
     />
     <p id="timer" class={videoType}>{time}</p>
@@ -74,6 +75,10 @@
       #remaining-progress {
         background: linear-gradient(yellow, gold);
         height: 100%;
+
+        &.success {
+          background: linear-gradient(palegreen, springgreen);
+        }
       }
 
       #timer {
