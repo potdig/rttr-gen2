@@ -22,7 +22,7 @@ export class TimerImpl {
 
   public format() {
     if (this.state === 'Success') {
-      return 'New PB!'
+      return 'Success'
     }
 
     if (this.remainingSeconds <= 0) {
