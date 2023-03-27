@@ -12,14 +12,10 @@
   $: time = $setup ? '-:--:--' : $timer?.format()
   $: polygonPercentage = $setup ? 100 : 100 - $timer?.percentage()
   $: color = colorFor(mirrorId)
-  $: progressWidth = videoType === 'main' ? 70 : 50
 </script>
 
-<div id="progress" style="grid-template-columns: {progressWidth}px 1fr;">
-  <p
-    id="mirror-id"
-    style="background-color: {color}; font-size: calc({progressWidth}px - 10px);"
-  >
+<div id="progress" class={videoType}>
+  <p id="mirror-id" class={videoType} style="background-color: {color}; ">
     <span>{mirrorId}</span>
   </p>
   <div id="progress-bar" style="border-color: {color}">
@@ -27,7 +23,7 @@
       id="remaining-progress"
       style="clip-path: polygon({polygonPercentage}% 0%, 100% 0%, 100% 100%, {polygonPercentage}% 100%)"
     />
-    <p id="timer" style="font-size: calc({progressWidth}px - 16px);">{time}</p>
+    <p id="timer" class={videoType}>{time}</p>
   </div>
 </div>
 
@@ -36,6 +32,30 @@
 
   #progress {
     display: grid;
+
+    &.main {
+      grid-template-columns: 70px 1fr;
+
+      #mirror-id {
+        font-size: calc($mainProgressWidth - 10px);
+      }
+
+      #timer {
+        font-size: calc($mainProgressWidth - 16px);
+      }
+    }
+
+    &.sub {
+      grid-template-columns: 50px 1fr;
+
+      #mirror-id {
+        font-size: calc($subProgressWidth - 10px);
+      }
+
+      #timer {
+        font-size: calc($subProgressWidth - 16px);
+      }
+    }
 
     #mirror-id {
       display: flex;
