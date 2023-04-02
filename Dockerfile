@@ -4,7 +4,9 @@ WORKDIR /app
 RUN apk --no-cache add git &&\
     git clone https://github.com/nodecg/nodecg.git &&\
     cd nodecg &&\
-    npm install --production
+    npm install --production &&\
+    npm install trash-cli &&\
+    npm run build
 
 # Build apps
 FROM node:lts-alpine AS build_app
