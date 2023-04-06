@@ -78,7 +78,7 @@
     $color: white,
     $alpha: 0.3,
   );
-  $runnerHeight: 50px;
+  $runnerHeight: 60px;
 
   #side {
     display: grid;
@@ -112,7 +112,7 @@
     border: $border;
     border-right: 0px;
     width: calc(100% - $borderSize);
-    height: 300px;
+    height: calc(60px + 2.4em * 7);
     position: relative;
     overflow: hidden;
 
@@ -157,7 +157,7 @@
   #description {
     display: grid;
     grid-template-columns: max-content 1fr;
-    font-size: 1.4em;
+    font-size: 1.5em;
     line-height: 1.2em;
 
     .label {
@@ -195,16 +195,22 @@
 
     #icon-names {
       display: grid;
-      grid-template-rows: 50px max-content;
+      grid-template-rows: 80px max-content;
       grid-template-columns: max-content;
-      justify-content: center;
-      gap: 0.1em 0.8em;
+      justify-content: start;
+      gap: 0.1em 1em;
       grid-auto-flow: column;
       font-size: 1.2em;
+      margin-top: 1em;
+      margin-left: 0.5em;
 
       img {
         height: 100%;
         margin: auto;
+      }
+
+      p {
+        text-align: center;
       }
     }
   }
