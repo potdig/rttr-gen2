@@ -112,15 +112,11 @@
     border: $border;
     border-right: 0px;
     width: calc(100% - $borderSize);
-    height: calc(60px + 2.4em * 7);
     position: relative;
     overflow: hidden;
 
-    & > * {
-      position: absolute;
-    }
-
     #value {
+      position: relative;
       width: 100%;
       top: 0;
       left: 0;
