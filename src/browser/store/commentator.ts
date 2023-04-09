@@ -11,7 +11,7 @@ const commentators: Readable<Array<Commentator>> = readable([], set => {
 })
 
 const mcs = derived(commentators, $commentators =>
-  $commentators.filter(commentator => commentator.linkId === 'MC')
+  $commentators.filter(commentator => commentator.linkIds.includes('MC'))
 )
 
 const currentMC: Readable<Array<string>> = readable([], set => {
@@ -30,10 +30,10 @@ const currentCommentators: Readable<Array<Commentator>> = derived(
     return commentators.filter(
       commentator =>
         currentMC.includes(commentator.name) ||
-        currentGroupOrders.some(
-          groupOrder =>
-            groupOrder[0] === commentator.linkId[0] &&
-            groupOrder[1] === commentator.linkId[1]
+        currentGroupOrders.some(groupOrder =>
+          commentator.linkIds.some(
+            linkId => groupOrder[0] === linkId[0] && groupOrder[1] === linkId[1]
+          )
         )
     )
   }

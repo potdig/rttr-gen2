@@ -30,7 +30,9 @@ function loadCommentatorsFromSpreadsheet() {
         commentator => ({
           name: commentator.name,
           icon: commentator.icon,
-          linkId: separateToGroupAndOrder(commentator.link_id),
+          linkIds: commentator.link_id
+            .split(',')
+            .map(linkId => separateToGroupAndOrder(linkId)),
         })
       )
     })
