@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Group } from '~/types/group'
-  import { colorFor } from './common-color'
-  import { currentRunner } from '~/browser/store/runner'
   import { currentCommentators } from '~/browser/store/commentator'
+  import { currentRunner } from '~/browser/store/runner'
+  import type { Group } from '~/types/group'
   import Shutter from './Shutter.svelte'
+  import { colorFor } from './common-color'
 
   const commentatorIconPathPrefix = '/assets/rttr-gen2/commentator-icons/'
 
@@ -22,9 +22,9 @@
     />
     <span>in</span>
     <img
-      id="rb-logo"
-      src="/assets/rttr-gen2/materials/rb_logo.png"
-      alt="Logo of RttR"
+      id="place-logo"
+      src="/assets/rttr-gen2/materials/place_logo.png"
+      alt="Logo of place"
     />
   </p>
   <div id="info" style="border-color: {colorFor(mirrorId)}">
@@ -102,7 +102,7 @@
       width: 100%;
     }
 
-    #rb-logo {
+    #place-logo {
       width: 140px;
       padding-right: 10px;
     }
