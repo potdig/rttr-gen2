@@ -103,7 +103,7 @@
     }
 
     #place-logo {
-      width: 140px;
+      width: 160px;
       padding-right: 10px;
     }
   }

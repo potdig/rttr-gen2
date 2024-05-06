@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Group } from '~/types/group'
   import { isSettingUp } from '~/browser/store/runner'
   import { timerFor } from '~/browser/store/timer'
+  import type { Group } from '~/types/group'
   import { colorFor } from './common-color'
 
   export let mirrorId: Group
@@ -10,7 +10,8 @@
   $: setup = isSettingUp(mirrorId)
   $: timer = timerFor(mirrorId)
   $: time = $setup ? '-:--:--' : $timer?.format()
-  $: polygonPercentage = $setup ? 100 : 100 - $timer?.percentage()
+  $: percentage = $timer ? $timer.percentage() : 0
+  $: polygonPercentage = $setup ? 100 : 100 - percentage
   $: color = colorFor(mirrorId)
 </script>
 
@@ -91,7 +92,7 @@
         font-family: 'DSEG14-Classic';
         font-weight: bold;
         font-style: italic;
-        color: dimgray;
+        color: #555555;
         mix-blend-mode: multiply;
         opacity: 0.8;
       }

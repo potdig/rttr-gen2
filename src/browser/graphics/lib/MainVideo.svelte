@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Group } from '~/types/group'
-  import { colorFor } from './common-color'
   import ProgressBar from './ProgressBar.svelte'
+  import { colorFor } from './common-color'
 
   export let mirrorId: Group
 
@@ -45,7 +45,7 @@
 
     img {
       width: 40%;
-      filter: grayscale(100%) contrast(60%) brightness(15%) opacity(50%);
+      filter: grayscale(100%) brightness(15%) opacity(50%);
     }
   }
 </style>

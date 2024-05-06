@@ -22,7 +22,7 @@
     align-items: center;
     left: 0;
     top: -100%;
-    color: rgba($color: white, $alpha: 0.5);
+    color: rgba($color: white, $alpha: 0.7);
     background: $blackBackground;
     font-size: 2em;
     font-family: 'Fira Sans Condensed', sans-serif;
