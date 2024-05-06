@@ -5,7 +5,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "luxon": "^3.2.1"
+    "luxon": "^3.4.4"
   },
   "nodecg": {
     "compatibleRange": "^2.0.0",

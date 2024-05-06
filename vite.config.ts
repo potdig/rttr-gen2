@@ -1,13 +1,22 @@
+import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte()],
-  server: {
-    host: true,
-  },
+  plugins: [
+    svelte(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'package-nodecg.json',
+          dest: '.',
+          rename: 'package.json',
+        },
+      ],
+    }),
+  ],
   build: {
     assetsDir: 'web-assets',
     rollupOptions: {
@@ -46,10 +55,11 @@ export default defineConfig({
         assetFileNames: 'web-assets/[name]-[hash][extname]',
       },
     },
+    emptyOutDir: true,
   },
   resolve: {
     alias: {
-      '~': resolve(__dirname, 'src'),
+      '~': '/src',
     },
   },
 })

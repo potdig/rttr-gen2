@@ -11,30 +11,119 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^11.0.0",
-    "@sveltejs/vite-plugin-svelte": "^2.0.0",
-    "@tsconfig/svelte": "^4.0.1",
-    "@types/color": "^3.0.3",
-    "@types/luxon": "^3.2.0",
-    "sass": "^1.57.1",
-    "svelte": "^3.54.0",
-    "svelte-check": "^2.10.0",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@sveltejs/vite-plugin-svelte": "^3.1.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "@types/color": "^3.0.6",
+    "@types/luxon": "^3.4.2",
+    "sass": "^1.76.0",
+    "svelte": "^4.2.15",
+    "svelte-check": "^3.7.1",
     "ts-nodecg": "^0.3.1",
-    "tslib": "^2.4.1",
-    "typescript": "^5.0.4",
-    "vite": "^4.0.0"
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5",
+    "vite": "^5.0.0",
+    "vite-plugin-static-copy": "^1.0.4"
   },
   "dependencies": {
     "color": "^4.2.3",
-    "luxon": "^3.2.1"
+    "luxon": "^3.4.4"
   },
   "nodecg": {
-    "compatibleRange": "^1.0.0",
+    "compatibleRange": "^2.0.0",
     "graphics": [
       {
         "file": "a/index.html",
         "width": 1920,
         "height": 1080
+      },
+      {
+        "file": "b/index.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "c/index.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "d/index.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "setup/index.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "dashboardPanels": [
+      {
+        "width": "3",
+        "name": "GroupA",
+        "title": "A班",
+        "file": "group-control/a/index.html"
+      },
+      {
+        "width": "3",
+        "name": "GroupB",
+        "title": "B班",
+        "file": "group-control/b/index.html"
+      },
+      {
+        "width": "3",
+        "name": "GroupC",
+        "title": "C班",
+        "file": "group-control/c/index.html"
+      },
+      {
+        "width": "3",
+        "name": "GroupD",
+        "title": "D班",
+        "file": "group-control/d/index.html"
+      },
+      {
+        "width": "3",
+        "name": "commentators",
+        "title": "MC・解説",
+        "file": "commentator/index.html"
+      },
+      {
+        "width": "3",
+        "name": "common-control",
+        "title": "その他",
+        "file": "common-control/index.html"
+      }
+    ],
+    "assetCategories": [
+      {
+        "name": "runner-icons",
+        "title": "走者アイコン",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "gif",
+          "png"
+        ]
+      },
+      {
+        "name": "commentator-icons",
+        "title": "MC・解説アイコン",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "gif",
+          "png"
+        ]
+      },
+      {
+        "name": "materials",
+        "title": "素材",
+        "allowedTypes": [
+          "png",
+          "woff2"
+        ]
       }
     ],
     "mount": [
