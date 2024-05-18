@@ -14,8 +14,8 @@
 2. Docker Compose でビルドして起動
 
    ```
-   $ docker compose build --build-arg LAYOUTS_NAME=rttr-gen2
-   $ docker compose up
+   $ docker compose --profile dev build --build-arg LAYOUTS_NAME=rttr-gen2
+   $ docker compose --profile dev up
    ```
 
 3. `http://localhost:9090/` で確認（適宜下記アセットを追加して確認してください）
